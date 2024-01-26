@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Year Display</title>
+</head>
+<body>
+  <div id="year">Loading...</div>
+
+  <script>
+   
+    fetch('http://localhost:3000/year')
+      .then(response => response.text())
+      .then(year => {
+       
+        document.getElementById('year').innerText = year;
+      })
+      .catch(error => {
+        console.error('Error fetching year:', error);
+        document.getElementById('year').innerText = 'Error fetching year';
+      });
+  </script>
+</body>
+</html>
